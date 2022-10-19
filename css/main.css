@@ -5,55 +5,65 @@
   --LightGrayishBlue: hsl(210, 46%, 95%);
 }
 
+html {
+  font-size: 13px;
+}
+
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Manrope", sans-serif;
-  font-size: 13px;
   background-color: var(--LightGrayishBlue);
 }
 
 .card {
-  margin: 20px;
+  margin: 1.53rem;
   width: 100%;
-  max-width: 350px;
-  border-radius: 10px;
+  max-width: 26.92rem;
+  border-radius: 0.77rem;
   box-shadow: 5px 3px 10px var(--GrayishBlue);
   background-color: white;
   position: relative;
   overflow: hidden;
+  transform: translateX(-120%);
+  opacity: 0;
 }
 
-picture {
+.card.appear {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.picture {
   width: 100%;
-  height: 230px;
+  height: 19, 23rem;
   overflow: hidden;
 }
 
-picture img {
+.picture img {
   height: 100%;
   width: 100%;
 }
 
-picture img:hover {
-  transform: scale(1.1);
+.main-content {
+  padding: 2.3rem 1.54rem 0.38rem;
 }
 
-article {
-  padding: 40px 20px 5px;
-}
-
-article h1 {
+.main-content-title,
+.card-profile-name {
   font-size: 17px;
+  color: var(--DesaturatedDarkBlue);
 }
 
-article p {
-  padding-block: 10px 20px;
-  font-size: 13px;
+.main-content-detail,
+.card-profile-date {
+  padding-block: 0.76rem 1.54rem;
+  font-size: 1.3rem;
+  color: var(--GrayishBlue);
 }
 
-.card-info {
+.card-personal-info {
   display: grid;
   grid-template-columns: 4fr 1fr;
   align-items: center;
@@ -63,8 +73,8 @@ article p {
 .card-profile {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 20px;
+  gap: 0.92rem;
+  padding: 1.54rem;
 }
 
 .card-profile img {
@@ -72,23 +82,24 @@ article p {
   border-radius: 50%;
 }
 
-.card-profile-content h2 {
-  font-size: 13px;
+.card-profile-name {
+  font-size: 1rem;
 }
 
-.card-profile-content span {
-  font-size: 11px;
+.card-profile-date {
+  font-size: 0.84rem;
 }
 
 .share-btn {
   background-color: var(--LightGrayishBlue);
   border: none;
-  width: 35px;
-  height: 35px;
+  width: 2.69rem;
+  height: 2.69rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: none;
 }
 
 .card-socials {
@@ -101,24 +112,21 @@ article p {
   width: 100%;
   grid-column-start: 1;
   grid-column-end: 3;
-  gap: 30px;
+  gap: 2.30rem;
 }
 
-.card-socials h2 {
+.card-socials-title {
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 1rem;
   font-weight: 100;
   letter-spacing: 5px;
+  color: var(--GrayishBlue);
 }
 
-.card-socials-items {
+.card-socials-icons {
   display: flex;
   align-items: center;
-  gap: 15px;
-}
-
-.card-socials-items img {
-  width: 19px;
+  gap: 1.15rem;
 }
 
 .card-profile.remove {
@@ -128,7 +136,7 @@ article p {
 .card-socials.active {
   display: flex;
   grid-row: 1 / 2;
-  padding: 30px;
+  padding: 2.30rem;
 }
 
 .share-btn.click {
@@ -138,7 +146,24 @@ article p {
 }
 
 .share-btn:hover {
+  cursor: pointer;
   background-color: var(--DesaturatedDarkBlue);
+}
+
+/* Hover Effects */
+
+@media (hover: hover) {
+  .picture img:hover {
+    transform: scale(1.1);
+  }
+
+  .social-icon:hover {
+    transform: translateY(-5px);
+  }
+
+  img:hover {
+    filter: saturate(190%);
+  }
 }
 
 .share-btn:hover img {
@@ -146,40 +171,42 @@ article p {
     brightness(204%) contrast(106%);
 }
 
+/* Media Queries */
+
 @media (min-width: 750px) {
   .card {
-    max-width: 950px;
-    height: 400px;
+    max-width: 73.07rem;
+    height: 30.76rem;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: visible;
   }
 
-  picture {
+  .picture {
     width: 100%;
     height: 100%;
     overflow: hidden;
   }
 
-  picture img {
+  .picture img {
     height: 100%;
     width: 100%;
   }
 
-  .card-info {
+  .card-personal-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-inline: 0 80px;
   }
 
-  article h1 {
-    font-size: 24px;
+  .main-content-title {
+    font-size: 1.84rem;
   }
 
-  article p {
-    font-size: 16px;
+  .main-content-detail {
+    font-size: 1.23rem;
   }
 
   .card-socials {
@@ -189,21 +216,21 @@ article p {
     background-color: var(--VeryDarkGrayishBlue);
     color: white;
     display: flex;
-    width: 300px;
-    height: 50px;
+    width: 23.07rem;
+    height: 3.84rem;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 2.5rem;
     z-index: 1;
-    border-radius: 10px;
+    border-radius: 0.76rem;
     opacity: 0;
   }
 
   .card-socials::after {
     content: "";
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 2.30rem;
+    height: 2.30rem;
     bottom: -20%;
     transform: rotate(45deg);
     background-color: var(--VeryDarkGrayishBlue);
@@ -215,5 +242,10 @@ article p {
 
   .card-profile.remove {
     display: inherit;
+  }
+
+  .share-btn {
+    width: 3.07rem;
+    height: 3.07rem;
   }
 }

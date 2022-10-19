@@ -27,30 +27,30 @@
     <title>Frontend Mentor | Article preview component</title>
   </head>
   <body>
-    <div class="card">
-      <picture>
-        <img src="images/drawers.jpg" alt="" />
+    <main class="card">
+      <picture class="picture">
+        <img src="images/drawers.jpg" alt="drawers" />
       </picture>
 
       <div class="card-content">
-        <article>
-          <h1>
+        <article class="main-content">
+          <h1 class="main-content-title">
             Shift the overall look and feel by adding these wonderful touches to
             furniture in your home
           </h1>
-          <p>
+          <p class="main-content-detail">
             Ever been in a room and felt like something was missing? Perhaps it
             felt slightly bare and uninviting. I’ve got some simple tips to help
             you make any room feel complete.
           </p>
         </article>
 
-        <div class="card-info">
+        <section class="card-personal-info">
           <div class="card-profile">
             <img src="images/avatar-michelle.jpg" alt="a women" />
             <div class="card-profile-content">
-              <h2>Michelle Appleton</h2>
-              <span> 28 Jun 2020</span>
+              <h2 class="card-profile-name">Michelle Appleton</h2>
+              <span class="card-profile-date"> 28 Jun 2020</span>
             </div>
           </div>
 
@@ -59,35 +59,22 @@
           </button>
 
           <div class="card-socials">
-            <h2>Share</h2>
-            <div class="card-socials-items">
-              <a href="#"
+            <h2 class="card-socials-title">Share</h2>
+            <div class="card-socials-icons">
+              <a href="#" class="social-icon"
                 ><img src="images/icon-facebook.svg" alt="facebook icon"
               /></a>
-              <a href="#"
+              <a href="#" class="social-icon"
                 ><img src="images/icon-twitter.svg" alt="twitter icon"
               /></a>
-              <a href="#"
+              <a href="#" class="social-icon"
                 ><img src="images/icon-pinterest.svg" alt="pinterest icon"
               /></a>
             </div>
           </div>
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   </body>
-  <script>
-    const profile = document.querySelector(".card-profile");
-    const shareBtn = document.querySelector(".share-btn");
-    const socials = document.querySelector(".card-socials");
-    const card = document.querySelector(".card");
-
-    if (card.clientWidth > 750) {
-      shareBtn.addEventListener("click", () => {
-        profile.classList.toggle("remove");
-        socials.classList.toggle("active");
-        shareBtn.classList.toggle("click");
-      });
-    } 
-  </script>
+  <script src="main.js"></script>
 </html>
